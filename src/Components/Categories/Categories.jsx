@@ -1,7 +1,7 @@
 import { Box, Button, Text } from '@chakra-ui/react';
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setCategory } from '../../redux/CategoriesSlice/CategoriesSlice';
+import { setCategory } from '../../redux/CategoriesSlice/categoriesSlice';
 
 const Categories = () => {
     const dispatch = useDispatch()
