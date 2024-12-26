@@ -47,7 +47,7 @@ export const Hero = () => {
                 
             </Container>
          
-            <Text as="p" filter="drop-shadow(2px 4px 6px black)" fontFamily="arial" fontSize={{base:'3xl', lg:'3xl'}} w="80%" color="white" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi incidunt voluptas est, quam, aperiam veniam alias tenetur fugit quisquam ut. Deleniti tempora ea corrupti unde, magni fugit eligendi reprehenderit.</Text>
+            <Text as="p" filter="drop-shadow(2px 4px 6px black)" fontFamily="arial" fontSize={{base:'2xl', lg:'3xl'}} w="100%" color="white" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi incidunt voluptas est, quam, aperiam veniam alias tenetur fugit quisquam ut. Deleniti tempora ea corrupti unde, magni fugit eligendi reprehenderit.</Text>
         </Container>
     </Flex>
     </>

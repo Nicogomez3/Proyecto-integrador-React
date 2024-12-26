@@ -9,7 +9,7 @@ import { MdKeyboardReturn } from "react-icons/md";
 const Process = () => {
   return (
     <>
-    <Container as="section" display="flex" bg="white" boxShadow="2xl" marginBottom="20px" marginTop="20px"
+    <Container as="section" display="flex" flexDirection={{base: "column", sm: "row"}} bg="white" boxShadow="2xl" marginBottom="20px" marginTop="20px"
     borderRadius="20px" flexWrap="wrap" fontSize="24px" alignItems="center" justifyContent={{base:"center", md:"space-between", xl:"space-between"}} p="40px">
         <Box as="div" display="flex" flexDirection="column" justifyContent="center" alignItems="center" >
             <Box bg="#eddea4" color="white" display="flex" alignItems="center" justifyContent="center" borderRadius="50%" width="40px" height="40px"  >
