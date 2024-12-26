@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import categoryReducer from './CategoriesSlice/CategoriesSlice';
+import categoryReducer from './CategoriesSlice/categoriesSlice';
 import menuReducer from './MenuSlice/menuSlice';
 import cartReducer from './CartSlice/cartSlice';
 import { persistStore, persistReducer } from 'redux-persist';
