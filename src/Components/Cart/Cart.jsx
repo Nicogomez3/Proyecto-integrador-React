@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { AiOutlineShopping } from "react-icons/ai";
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCart, decrementItemQuantity, incrementItemQuantity, toggleCart } from '../../redux/CartSlice/cartSlice';
+import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const Cart = () => {
   
   const dispatch = useDispatch();
@@ -12,6 +14,7 @@ const Cart = () => {
   const { isOpen: isModalOpen, onOpen: onModalOpen, onClose: onModalClose} = useDisclosure();
   const { isOpen: isDeleteModalOpen, onOpen: onDeleteModalOpen, onClose: onDeleteModalClose} = useDisclosure();
   const [itemToDelete, setItemToDelete] = useState(null);
+  const navigate = useNavigate();
 
   const handleClearCart = () => {
     dispatch(clearCart());
@@ -81,7 +84,9 @@ const Cart = () => {
 
                 <Box display="flex" gap="20px">
 
-                  <Button>Finalizar Compra</Button>
+                  <Button onClick={() => 
+                    navigate('/Checkout')
+                  }>Finalizar Compra</Button>
                   <Button onClick={onModalOpen}>Vaciar</Button>
                 </Box>
                

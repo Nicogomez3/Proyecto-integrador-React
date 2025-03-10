@@ -1,10 +1,11 @@
-import { Box, Button, Container, Flex, Heading, Icon, IconButton } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Heading, Icon, IconButton, Text } from '@chakra-ui/react'
 import { useSelector, useDispatch } from 'react-redux';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { toggleMenu } from '../../../redux/MenuSlice/menuSlice';
 import Cart from '../../Cart/Cart';
+import { logoutUser } from '../../../redux/AuthSlice/authSlice';
 // import { FaRegUser } from "react-icons/fa";
 // import { PiSignIn } from "react-icons/pi";
 
@@ -13,11 +14,20 @@ import Cart from '../../Cart/Cart';
 
 export const Header = () => {
     const dispatch = useDispatch();
-    const isOpen = useSelector(state => state.menu.isOpen);
+    const loggedInUser = useSelector((state) => state.auth.loggedInUser);
+    const isMenuOpen = useSelector(state => state.menu.isOpen);
+    const isOpen = useSelector((state) => state.cart.isOpen);
     const [headerBg, setHeaderBg] = useState('transparent');
     const [isHovered, setIsHovered] = useState(false);
     const [headingColor, setHeadingColor] = useState('black');
     const [linkColor, setLinkColor] = useState('transparent')
+    // const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+
+
+    const handleLogout = () => {
+      dispatch(logoutUser());
+    };
 
     const handleClick = () => {
       window.scroll(0, 0);
@@ -59,6 +69,11 @@ export const Header = () => {
       setLinkColor('transparent');
     };    
 
+    //  const handleMenuToggle = () => {
+    //    setIsMenuOpen(!isMenuOpen);
+    //  };
+  
+
   return (
     <>
     <Flex 
@@ -89,18 +104,18 @@ export const Header = () => {
                 listStyleType="none" 
                 alignItems="center"
                 justifyContent="space-between"
-                
+                gap="30px"
                 
             >
               <IconButton bg="transparent" 
-              icon={isOpen ? <CloseIcon /> : <HamburgerIcon fontSize="3xl" />}
+              icon={ isMenuOpen ? <CloseIcon /> : <HamburgerIcon fontSize="3xl" />}
               onClick={() => dispatch(toggleMenu())}
               display={{ base: "block", md: "none" }}
               aria-label="Toggle Menu"
               />
                 
               <Container as='ul' 
-                display={{ base: isOpen ? "flex" : "none", md: "flex" }}
+                display={{ base: isMenuOpen ? "flex" : "none", md: "flex" }}
                 flexDirection={{ base: "column", md: "row" }}
                 color='white'  
                 gap="4" 
@@ -117,6 +132,7 @@ export const Header = () => {
                 borderRadius={{ base: "0 0 10px 10px", lg: "none" }}
                 height={{ base: "calc(100vh - 60px)", md: "auto" }}
                 w={{ base: "50%",  }}	
+                
                 >
                   <Heading as='h2' marginBottom="30px" display={{ base: "block", md:"none", lg:"none", xl:"none"}}>DecoShop</Heading>
                   
@@ -130,7 +146,21 @@ export const Header = () => {
             
               
                   <Link style={{color: linkColor, transition: 'color 0.3s ease'}} to="/Products" onClick={handleClick}>Productos</Link>
-
+                  {loggedInUser ? (
+                  <Container display="flex" alignItems="center" gap="10px">
+                    <Text color="white">
+                      {loggedInUser.name}
+                    </Text>
+                    <Button 
+                      bg="transparent"
+                      color="white"
+                      onClick={handleLogout}
+                    >
+                      Cerrar Sesión
+                    </Button>
+                  </Container>  
+                  ) : (
+                   <> 
                   <Button 
                     bg="transparent" 
                     _focus={{ boxShadow: 'none' }} 
@@ -138,8 +168,9 @@ export const Header = () => {
                     marginInlineStart="30px" 
                     textAlign="center"
                     color="white"
+                    
                   > 
-                    <Link style={{color: linkColor, transition: 'color 0.3s ease'}} to="/SignIn">Iniciar Sesión</Link>
+                    <Link style={{color: linkColor, transition: 'color 0.3s ease'}} to="/login">Iniciar Sesión</Link>
                     
                   </Button>
 
@@ -150,26 +181,17 @@ export const Header = () => {
                     color="white" 
                     marginInlineStart="50px" 
                     textAlign="center" 
+              
                   > 
-                    <Link style={{color: linkColor, transition: 'color 0.3s ease'}} to="/SignUp">Registrarse</Link>
+                    <Link style={{color: linkColor, transition: 'color 0.3s ease'}} to="/register">Registrarse</Link>
                   </Button>
-
-                  {/* <Box as='div' display="flex" gap="4" alignItems="center"  color="white" fontSize='18px' marginInlineStart="50px">
-                    {/* <FaRegUser />
-                    <PiSignIn /> */}
-{/*                     
-                      <Link to="/SignIn" display="inline-flex" >Iniciar Sesión</Link>
-                    
-                    
-                    <Link to="/SignUp">Registrarse</Link>
-                  </Box> */} 
-
-                 
+                  </> 
+              )}   
               </Container>
 
              
 
-              <Container as='div'cursor="pointer" color="white" fontSize='24px' w="0%" marginInlineStart="0px" marginEnd="0px" marginStart="0px" marginInlineEnd="0px" >
+              <Container as='div'cursor="pointer" color="white" fontSize='24px' width="0px" padding="0px" marginInlineStart="0px" marginEnd="0px" marginStart="0px" marginInlineEnd="0px"       paddingRight="30px">
                <Cart/>
               </Container>
               
