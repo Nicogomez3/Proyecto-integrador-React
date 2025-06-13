@@ -17,10 +17,6 @@ export const Header = () => {
     const loggedInUser = useSelector((state) => state.auth.loggedInUser);
     const isMenuOpen = useSelector(state => state.menu.isOpen);
     const isOpen = useSelector((state) => state.cart.isOpen);
-    const [headerBg, setHeaderBg] = useState('transparent');
-    const [isHovered, setIsHovered] = useState(false);
-    const [headingColor, setHeadingColor] = useState('black');
-    const [linkColor, setLinkColor] = useState('transparent')
     // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
@@ -34,67 +30,25 @@ export const Header = () => {
       navigate("/Products");
     }
 
-    useEffect(() => {
-      const handleScroll = () => {
-        if (window.scrollY > 20) {
-          setHeaderBg('#0000008a');
-          setLinkColor('white');
-          setHeadingColor('white');
-        } else {
-          setHeaderBg('transparent');
-          setLinkColor('transparent');
-          setHeadingColor('black');
-        }
-      }
-
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      }
-    }, [isHovered]);
-
-    const handleMouseEnter = () => {
-      setIsHovered(true);
-      setHeaderBg('#0000008a');
-      setHeadingColor('white');
-      setLinkColor('white');
-    };
-
-    const handleMouseLeave = () => {
-      setIsHovered(false);
-      if (window.scrollY <= 20) {
-        setHeaderBg('transparent');
-      }
-      setHeadingColor('black');
-      setLinkColor('transparent');
-    };    
-
-    //  const handleMenuToggle = () => {
-    //    setIsMenuOpen(!isMenuOpen);
-    //  };
-  
-
   return (
     <>
     <Flex 
     as="header" 
-    bg={headerBg}
     transition="background-color 0.3s ease"
     margin="0 auto"
     justifyContent="space-between"
     align="center" 
-    onMouseEnter={handleMouseEnter}
-    onMouseLeave={handleMouseLeave}
     p="0 30px 0 30px" 
-    height="60px"
+    height="70px"
     position="fixed" 
     top="0" 
     left="0" 
     zIndex="10" 
     width="100%"
+    bgColor="#2d5356"
     >
     
-        <Heading style={{color: headingColor, transition: 'color 0.3s ease'}}>DecoShop</Heading>
+        <Heading color="white">DecoShop<Text color="#da9c1d"  as="span">.</Text> </Heading>
      
         
             <Flex 
@@ -104,11 +58,11 @@ export const Header = () => {
                 listStyleType="none" 
                 alignItems="center"
                 justifyContent="space-between"
-                gap="30px"
+                gap={{ base: "20px", md: "50px" }}
                 
             >
               <IconButton bg="transparent" 
-              icon={ isMenuOpen ? <CloseIcon /> : <HamburgerIcon fontSize="3xl" />}
+              icon={ isMenuOpen ? <CloseIcon /> : <HamburgerIcon color="white" fontSize="3xl" />}
               onClick={() => dispatch(toggleMenu())}
               display={{ base: "block", md: "none" }}
               aria-label="Toggle Menu"
@@ -126,51 +80,50 @@ export const Header = () => {
                 right="0px"  
                 padding={{ base: "40px 30px 0 0", md: "30px" }}
                 zIndex="5"
-                bg={{ base: "#0000008a", md:"transparent", lg: "transparent"}}
+                bg={{ base: "#2d5356", md:"none", lg: "none"}}
                 alignItems={{ base: "flex-end", md:"center", lg: "center", xl: "center"  }}
                 justifyContent={{ base: "none", md:"space-between", lg: "space-between" }}
                 borderRadius={{ base: "0 0 10px 10px", lg: "none" }}
                 height={{ base: "calc(100vh - 60px)", md: "auto" }}
-                w={{ base: "50%",  }}	
+                w={{ base: "50%", }}	
                 
                 >
                   <Heading as='h2' marginBottom="30px" display={{ base: "block", md:"none", lg:"none", xl:"none"}}>DecoShop</Heading>
                   
-                  <Link style={{color: linkColor, transition: 'color 0.3s ease'}} to="/">Inicio</Link>
+                  <Link  to="/">Inicio</Link>
                   
                 
-                  <Link style={{color: linkColor, transition: 'color 0.3s ease'}} to="/About">Nosotros</Link>
+                  <Link  to="/About">Nosotros</Link>
               
               
-                  <Link style={{color: linkColor, transition: 'color 0.3s ease'}} to="/Contact">Contacto</Link>
+                  <Link  to="/Contact">Contacto</Link>
             
               
-                  <Link style={{color: linkColor, transition: 'color 0.3s ease'}} to="/Products" onClick={handleClick}>Productos</Link>
+                  <Link  to="/Products" onClick={handleClick}>Productos</Link>
                   {loggedInUser ? (
-                  <Container display="flex" alignItems="center" gap="10px">
+                <Container display="flex" padding="0" flexDirection={{ base: "column", md:"row" }} alignItems={{ base: "flex-end", md:"center" }} gap="10px">
                     <Text color="white">
                       {loggedInUser.name}
                     </Text>
                     <Button 
-                      bg="transparent"
+                      bg="#da9c1d"
                       color="white"
                       onClick={handleLogout}
                     >
                       Cerrar Sesión
                     </Button>
-                  </Container>  
+                </Container>  
                   ) : (
                    <> 
+                   
                   <Button 
                     bg="transparent" 
                     _focus={{ boxShadow: 'none' }} 
                     _hover={{ bg: 'transparent' }}  
-                    marginInlineStart="30px" 
-                    textAlign="center"
                     color="white"
-                    
+                    minWidth={{ base: "auto", md: "150px" }}
                   > 
-                    <Link style={{color: linkColor, transition: 'color 0.3s ease'}} to="/login">Iniciar Sesión</Link>
+                    <Link color='white' to="/login">Iniciar Sesión</Link>
                     
                   </Button>
 
@@ -179,11 +132,8 @@ export const Header = () => {
                     _focus={{ boxShadow: 'none' }} 
                     _hover={{ bg: 'transparent' }}  
                     color="white" 
-                    marginInlineStart="50px" 
-                    textAlign="center" 
-              
-                  > 
-                    <Link style={{color: linkColor, transition: 'color 0.3s ease'}} to="/register">Registrarse</Link>
+                  >
+                   <Link color='white' to="/register">Registrarse</Link>
                   </Button>
                   </> 
               )}   

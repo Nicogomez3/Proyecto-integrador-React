@@ -135,7 +135,7 @@ export const Contact = () => {
 
             </Container>
             <Container>
-                <form ref={form} onSubmit={sendEmail}>
+                <form className='form--contact' ref={form} onSubmit={sendEmail}>
                   <Heading as="h3" fontSize="2xl" fontWeight="400" textAlign="center" color="white">
                     Envianos un mensaje
                   </Heading>

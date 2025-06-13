@@ -41,7 +41,7 @@ const Register = () => {
   return (
     <Container as="section" width="100%" height="100vh" display="flex" flexDirection="column" alignItems="center" justifyContent="center">
         <Heading as="h1">Registrate</Heading>
-        <Box width="100%" mt="40px" bg="#2d5356" p="30px" borderRadius="14px" >
+        <Box width="450px" mt="40px" bg="#2d5356" p="30px" borderRadius="14px" >
             <Formik 
             initialValues={registerInitialValues}
             validationSchema={registerValidationSchema}

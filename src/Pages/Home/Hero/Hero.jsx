@@ -1,57 +1,62 @@
-import { Container, Flex, Heading, Text } from '@chakra-ui/react'
-import { FaFacebookF } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa";
+import { useState } from "react";
+import { Box, Image, Text, Button, Flex, Stack, Heading } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
+const images = [
+  { src: "/img/banner.jpeg", label: "Bed Room", items: "1200+ item" },
+  { src: "/img/banner2.jpeg", label: "Living Room", items: "900+ item" },
+  { src: "/img/banner3.jpg", label: "Waiting Room", items: "500+ item" }
+];
 
-import React from 'react'
+const MotionBox = motion(Box);
 
 export const Hero = () => {
+  const [index, setIndex] = useState(0);
+
+  const handleNext = () => setIndex((prev) => (prev + 1) % images.length);
+  const handlePrev = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
+
   return (
-    <>
-   
+    <Flex direction="column" align="center" justify="center" w="full" h="100vh" bg="teal.900" color="white" p={10}>
+      {/* Texto principal */}
+      <Stack spacing={4} textAlign="center" mb={10}>
+        <Text fontSize="sm" bg="gray.700" px={3} py={1} rounded="full">Diseños sofisticados</Text>
+        <Heading fontSize="5xl">Modernos diseños de interiores</Heading>
+        <Text fontSize="lg" opacity={0.8}>
+          Elige los muebles adecuados para tu hogar, añadirá elegancia y funcionalidad a tu interior.
+        </Text>
+        <Flex gap={4} justify="center">
+          <Button colorScheme="yellow">Comprar</Button>
+          <Button variant="link" color="whiteAlpha.900">Sobre nosotros</Button>
+        </Flex>
+      </Stack>
 
-    <Flex 
-        as="section" 
-        bg="white" 
-        bgImage="/img/banner3.jpg"
-        bgSize="cover" 
-        width="100%" 
-        flexDirection={{base:'column', lg:'row'}}
-        bgPosition="center" 
-        bgRepeat="no-repeat"   
-        height="100vh" 
-        bgAttachment="fixed"
-        fontFamily="Tangerine"
-        justify={{base:'center', lg:'space-between'}} 
-        alignItems={{base:'flex-start', lg:'flex-end'}}
-        boxShadow="0px 6px 14px 1px rgba(0,0,0,0.69);" >
-        <Heading as="h1"  p ="20px"> 
-            <Text as="span" fontWeight="700"   color="white" fontSize={{base:'5xl', sm:'6xl', md:'8xl', lg:'8xl'}} filter="drop-shadow(2px 4px 6px black)" display="block" >HOLA,
-                <Text as="span" filter="drop-shadow(2px 4px 6px black)" color="gray.400" fontSize={{base:'2xl', lg:'3xl'}} marginLeft="20px" >
-                SOMOS
-                </Text>
-            </Text> 
-        
-            <Text as="span" fontWeight="700" color="white" filter="drop-shadow(2px 4px 6px black)"  fontSize={{base:'5xl', sm:'6xl', md:'8xl', lg:'9xl'}}>
-                DECOSHOP
-            </Text> 
-        </Heading>
-        <Container  as="section" maxW="600px" margin="0" p="20px" display="flex" flexDirection="column" >
-            <Container  display="flex" gap="4" w="0%" marginStart="0" marginInlineStart="0">
-                <Container as="span" bg='black' color='white'  borderRadius="50%"  display="flex" alignItems="center" justifyContent="center"  width={{base:'40px', lg:'50px'}} height={{base:'40px', lg:'50px'}}>
-                    <FaFacebookF />
-                </Container>
-                <Container as="span" bg='black' color='white'   borderRadius="50%"  display="flex" alignItems="center" justifyContent="center" width={{base:'40px', lg:'50px'}} height={{base:'40px', lg:'50px'}}>
-                    <FaInstagram />
-                </Container>
-                
-            </Container>
-         
-            <Text as="p" filter="drop-shadow(2px 4px 6px black)" fontFamily="arial" fontSize={{base:'2xl', lg:'3xl'}} w="100%" color="white" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi incidunt voluptas est, quam, aperiam veniam alias tenetur fugit quisquam ut. Deleniti tempora ea corrupti unde, magni fugit eligendi reprehenderit.</Text>
-        </Container>
+      {/* Imagen principal con animación */}
+      <MotionBox
+        key={index}
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -50 }}
+        transition={{ duration: 0.5 }}
+        position="relative"
+      >
+        <Image src={images[index].src} alt={images[index].label} rounded="lg" boxShadow="lg" w="500px" h="300px" />
+        <Text position="absolute" bottom={4} left={4} bg="blackAlpha.600" p={2} rounded="md">
+          {images[index].label} - {images[index].items}
+        </Text>
+      </MotionBox>
+
+      {/* Botones de navegación */}
+      <Flex mt={4} gap={4}>
+        <Button onClick={handlePrev} leftIcon={<ChevronLeftIcon />} color="white" colorScheme="gray" variant="outline">
+          Atrás
+        </Button>
+        <Button onClick={handleNext} rightIcon={<ChevronRightIcon />} colorScheme="yellow">
+          Siguiente
+        </Button>
+      </Flex>
     </Flex>
-    </>
-
-  )
+  );
 }
 

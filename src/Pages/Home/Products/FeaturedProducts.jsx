@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react'
 import { randomsPick } from '../../../utils/randomsPick';
 import { Link, Navigate } from 'react-router-dom';
 import { Recommended } from '../../../Data/Recommended';
+import { FaCartShopping } from "react-icons/fa6";
+
 
 
 export const FeaturedProducts = () => {
@@ -39,24 +41,32 @@ export const FeaturedProducts = () => {
                           <GridItem 
                           key={product.id}
                           boxShadow="-1px -1px 12px 2px rgba(0,0,0,0.34);   "
-                          borderRadius="12px"
+                          borderRadius="20px"
                           w={{base:"280px", md:"325px", lg:"325px", xl:"400px"}}
-                          h="auto"
-                          p="20px"
+                          h="420px"
+                          
                           display="flex"
                           flexDirection="column"
                           justifyContent="space-between"
                           alignItems="center"
                           textAlign="center"
                           >
-                            <Img src={product.img} alt={product.nombre} w="250px" h="300px" objectFit="cover"  borderRadius="12px"/>
-                            <Heading as="h3"  fontSize="3xl"> {product.nombre} </Heading>
-                            <Text>{product.descripcion}</Text>
-                            <Text bg="yellow.200" borderRadius="12px" p="10px" fontWeight="semibold"> $ {product.precio.toFixed(2)}</Text>
-                            <Text> {product.categoria}</Text>
-                            <Button to="/Products" onClick={handleClick}>
-                              <Link to="/Products">Descubre más</Link>
-                            </Button>
+                            <Img src={product.img} alt={product.nombre} w="250px" h="300px" p="16px" objectFit="cover"  borderRadius="12px"/>
+                            <Box backgroundColor="#2d5356" p="20px" borderRadius="18px" display="flex" alignItems="center" justifyContent="space-between" width="100%" height="90px" mt="10px">
+                              <Box display="flex" flexDirection="column" alignItems="flex-start" lineHeight={2.0} justifyContent="center">
+                                <Heading as="h3" color="white" fontWeight="500" fontSize="16px"> {product.nombre} </Heading>
+                                <Text color="white" fontWeight="semibold"> $ {product.precio.toFixed(2)}</Text>
+                              </Box>
+                              <Box display="flex" alignItems={"center"} justifyContent="center" mt="10px">
+                                <Button color="#cf9220" backgroundColor="white" p="10px" borderRadius="50%" width="50px" height="50px"  to="/Products" onClick={handleClick}>
+                                  <Link to="/Products"> 
+                                    <FaCartShopping fontSize="24px" />
+                                  </Link>
+                                </Button>
+                              </Box>
+                            </Box>
+                            
+                          
                           </GridItem>
                       ))}
               </Grid>

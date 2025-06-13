@@ -37,46 +37,46 @@ const Login = () => {
   }, [dispatch]);
 
   return (
-    <Container as="section" width="100%" height="100vh" display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-      <Box>
+    <Box as="section" width="100%" height="100vh" display="flex" flexDirection="column" alignItems="center" justifyContent="center">
         <Heading>
           Inicia Sesión
-        </Heading>
-      </Box>
-      <Box bg="#2d5356" p="30px" borderRadius="14px" mt="40px" width={{ base: "100%", md: "400px" }}>
-        <Formik
+        </Heading>     
+        <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" bg="#2d5356"  p="20px" borderRadius="12px" width="450px" height="400px" boxShadow="lg">
+          <Formik
           initialValues={loginInitialValues}
           validationSchema={loginValidationSchema}
           onSubmit={handleSubmit}
         >
-          {({ isValid, dirty, setErrors }) => {
-            useEffect(() => {
-              if (error) {
-                setErrors({ email: error, password: error });
-              }
-            }, [error, setErrors]);
+            {({ isValid, dirty, setErrors }) => {
+              useEffect(() => {
+                if (error) {
+                  setErrors({ email: error, password: error });
+                }
+              }, [error, setErrors]);
 
-            return (
-              <Form>
-                <InputLogin name="email" type="email" placeholder="Email" />
-                <InputLogin name="password" type="password" placeholder="Contraseña" />
-                {error && (
-                  <Text color="red.500" textAlign="center" mt="10px">{error}</Text>
-                )}
-                <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" mt="20px" gap="10px">
-                  <Button outline="none" backgroundColor="#da9c1d" _hover={{ backgroundColor: "#ebc16b" }} color="white" disabled={!(isValid && dirty)} type="submit">
-                    Iniciar Sesión
-                  </Button>
-                  <Link to="/register">
-                    <Text textDecoration="underline" color="white">¿No tienes cuenta? Registrate</Text>
-                  </Link>
-                </Box>
-              </Form>
-            );
-          }}
-        </Formik>
-      </Box>
-    </Container>
+              return (
+                <Form>
+                  <InputLogin name="email" type="email" placeholder="Email" />
+                  <InputLogin name="password" type="password" placeholder="Contraseña" />
+                  {error && (
+                    <Text color="red.500" textAlign="center" mt="10px">{error}</Text>
+                  )}
+                  <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" mt="20px" gap="10px">
+                    <Button outline="none" backgroundColor="#da9c1d" _hover={{ backgroundColor: "#ebc16b" }} color="white" disabled={!(isValid && dirty)} type="submit">
+                      Iniciar Sesión
+                    </Button>
+                    <Link to="/register">
+                      <Text textDecoration="underline" color="white">¿No tienes cuenta? Registrate</Text>
+                    </Link>
+                  </Box>
+                </Form>
+              );
+            }}
+          </Formik>
+        </Box>
+        
+      
+    </Box>
   );
 };
 

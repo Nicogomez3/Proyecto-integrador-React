@@ -1,4 +1,4 @@
-form {
+.form--contact {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,6 +8,7 @@ form {
     border-radius: 12px;
     width: 470px;
     height: 670px;
+    margin-top: 70px;
 }
 
 .form-group {
@@ -22,7 +23,7 @@ form {
 .form-group input {
     width: 370px;  
     height: 55px; 
-    padding: 10px;
+    padding: 10px 20px;
     margin-top: 20px;
     border: 1px solid #ccc;
     border-radius: 12px;
@@ -35,7 +36,7 @@ form {
 .form-group textarea {
     width: 370px;
     height: 200px;
-    padding: 10px;
+    padding: 10px 30px;
     margin-top: 20px;
     border: 1px solid #ccc;
     border-radius: 12px;
@@ -59,4 +60,23 @@ form {
     cursor: pointer;
     outline: none;
     margin-top: 30px;
+}
+
+
+@media screen and (max-width: 500px) {
+    form {
+        width: 90%;
+        height: 550px;
+    }
+    .form-group input {
+        width: 100%;
+        height: 40px;
+    }
+    .form-group textarea {
+        width: 100%;
+        
+    }
+    .button-input {
+        width: 80%;
+    }
 }

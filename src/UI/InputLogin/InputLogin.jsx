@@ -6,11 +6,11 @@ const InputLogin = ({name, type, placeholder}) => {
   return (
     <Field name={name}>
         {({field, form: {touched, errors}}) => (
-            <Box display="flex" flexDirection="column" alignItems="flex-start" justifyContent="flex-start" mb="20px ">
+            <Box display="flex" width="100%" flexDirection="column" alignItems="flex-start" justifyContent="flex-start" mb="20px ">
                 <Input 
                 {...field} type={type} className="form-control" placeholder={placeholder} 
                 borderColor={errors[field.name] && touched[field.name] ? 'red.500' : 'gray.300'} 
-                border="none" color="white" backgroundColor="#345f62" p="30px 10px" borderRadius="14px"
+                border="none" color="white" backgroundColor="#1d767c" p="20px 30px" borderRadius="14px"
                 
                 />
                 <ErrorMessage name={name}>
