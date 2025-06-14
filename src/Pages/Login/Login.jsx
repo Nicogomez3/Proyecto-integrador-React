@@ -41,7 +41,7 @@ const Login = () => {
         <Heading>
           Inicia Sesión
         </Heading>     
-        <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" bg="#2d5356"  p="20px" borderRadius="12px" width="450px" height="400px" boxShadow="lg">
+        <Box display="flex" flexDirection="column" marginTop="20px" justifyContent="center" alignItems="center" bg="#2d5356"  p="20px" borderRadius="12px" width={{ base:"300px" , md: "400px" }} height="400px" boxShadow="lg">
           <Formik
           initialValues={loginInitialValues}
           validationSchema={loginValidationSchema}

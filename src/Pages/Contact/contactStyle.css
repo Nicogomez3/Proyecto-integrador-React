@@ -64,7 +64,7 @@
 
 
 @media screen and (max-width: 500px) {
-    form {
+    .form--contact {
         width: 90%;
         height: 550px;
     }
