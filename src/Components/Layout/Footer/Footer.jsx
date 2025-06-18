@@ -57,13 +57,13 @@ export const Footer = () => {
           </Box>
           <Box display="flex" gap="10px" alignItems="center" marginRight="20px">
             <Box bgColor="#e3e3e391"  borderRadius="2px"  display="flex" alignItems="center" justifyContent="center" width="52px" height="30px">
-              <Img src='/public/img/ae3.png' width="38px" />
+              <Img src='/img/ae3.png' width="38px" />
             </Box>
             <Box bgColor="#e3e3e391"  borderRadius="2px"  display="flex" alignItems="center" justifyContent="center" width="52px" height="30px">
-              <Img src='/public/img/mastercard.png' width="36px" />
+              <Img src='/img/mastercard.png' width="36px" />
             </Box>
             <Box bgColor="#e3e3e391"  borderRadius="2px"  display="flex" alignItems="center" justifyContent="center" width="52px" height="30px">
-              <Img src='/public/img/ae2.png' width="36px" />
+              <Img src='/img/ae2.png' width="36px" />
             </Box>
           </Box>
         </Box>
