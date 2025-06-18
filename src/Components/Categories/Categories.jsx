@@ -14,22 +14,20 @@ const Categories = () => {
     };
 
     return (
-      <Box display="flex" justifyContent="center" gap="10px" mb="20px">
+      <Box display="flex" justifyContent="center" flexWrap="wrap" gap="10px" mb="20px">
         {categories.map((category) => (
           <Button
             key={category}
             onClick={() => handleCategoryClick(category)}
-            colorScheme={selectedCategory === category ? 'blue' : 'gray'}
+            bg={selectedCategory === category ? '#2d5356' : 'gray.200'}
+            color={selectedCategory === category ? 'white' : 'black'}
+            _hover={{ bg: selectedCategory === category ? '#2d5356' : 'gray.300' }}
+            transition= "all 0.6s ease"
+            transform={selectedCategory === category ? 'scale(1.05)' : 'scale(1.0)'}
           >
             {category}
           </Button>
         ))}
-        {/* <Button
-          onClick={() => handleCategoryClick('Todo')}
-          colorScheme={selectedCategory === 'Todo' ? 'blue' : 'gray'}
-        >
-          Todo
-        </Button> */}
       </Box>
     );
   };

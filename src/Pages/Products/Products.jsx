@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addItemToCart } from '../../redux/CartSlice/cartSlice';
 import { setProducts } from '../../redux/ProductSlice/productSlice';
 import { FaCartShopping } from "react-icons/fa6";
+import { AnimatePresence, motion } from 'framer-motion';
 
 export const Products = () => {
   const [visibleProducts, setVisibleProducts] = useState([]);
@@ -15,6 +16,8 @@ export const Products = () => {
   const products = useSelector((state) => state.products.products);
   const dispatch = useDispatch();
   const toast = useToast();
+  const MotionGridItem = motion(GridItem);
+  const MotionGrid = motion(Grid);
 
   useEffect(() => {
     // Despacha la acción para establecer los productos en el estado de Redux
@@ -72,40 +75,66 @@ export const Products = () => {
         <option value="name-asc">Nombre: A-Z</option>
         <option value="name-desc">Nombre: Z-A</option>
       </Select>
-      <Grid templateColumns={{ base: "1fr", lg: "repeat(3, 1fr)" }} justifyContent="center" p="20px" gap={6} width={{ base: "none", lg: "80%" }}>
-        {visibleProducts.map((product) => (
-          <GridItem key={product.id} 
-          
-             boxShadow="-1px -1px 12px 2px rgba(0,0,0,0.34);   "
-                          borderRadius="20px"
-                          w={{base:"280px", md:"325px", lg:"325px", xl:"400px"}}
-                          h="420px"
-                          
-                          display="flex"
-                          flexDirection="column"
-                          justifyContent="space-between"
-                          alignItems="center"
-                          textAlign="center"
-          >
-            <Img src={product.img} alt={product.nombre} w="250px" h="300px" objectFit="cover" borderRadius="12px" />
-             <Box backgroundColor="#2d5356" p="20px" borderRadius="18px" display="flex" alignItems="center" justifyContent="space-between" width="100%" height="90px" mt="10px">
-              <Box display="flex" flexDirection="column" alignItems="flex-start" lineHeight={2.0} justifyContent="center">
-                <Heading as="h3" color="white" fontWeight="500" fontSize="16px">{product.nombre}</Heading>
-                <Text color="white" fontWeight="semibold">$ {product.precio.toFixed(2)}</Text>
+      <Box   
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        width="100%"  
+        maxW="1200px"
+      >
+        <AnimatePresence mode="wait">
+          <MotionGrid
+              key={selectedCategory + filter}
+              templateColumns= {{ base: "1fr", lg: "repeat(3, 1fr)" }}
+              justifyContent="center"
+              p="20px"
+              gap={6}
+              w="100%"
+              maxW="1200px"
+              mx="auto"
+              
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {visibleProducts.map((product) => (
+            <GridItem key={product.id}    
+                            boxShadow="-1px -1px 12px 2px rgba(0,0,0,0.34);   "
+                            borderRadius="20px"
+                            w={{ base:"280px", md:"325px", lg:"325px", xl:"400px" }}
+                            
+                            h="420px"
+                            display="flex"
+                            flexDirection="column"
+                            justifyContent="space-between"
+                            alignItems="center"
+                            textAlign="center"
+                            mx="auto"
+            >
+              <Img src={product.img} alt={product.nombre} w="250px" h="300px" objectFit="contain" borderRadius="12px" />
+              <Box backgroundColor="#2d5356" p="20px" borderRadius="18px" display="flex" alignItems="center" justifyContent="space-between" width="100%" height="90px" mt="10px">
+                <Box display="flex" flexDirection="column" alignItems="flex-start" lineHeight={2.0} justifyContent="center">
+                  <Heading as="h3" color="white" textAlign="left" fontWeight="500" fontSize="16px">{product.nombre}</Heading>
+                  <Text color="white" textAlign="left" fontWeight="semibold">$ {product.precio.toFixed(2)}</Text>
+
+                </Box>
+                <Box display="flex" flexDirection={{base: "column" , md:"row"}} alignItems={"center"} gap={{base:"5px" , md: "15px"}} justifyContent="center" mt="10px">
+                  <Text color="white" fontWeight="semibold">{product.categoria}</Text>
+                  <Button  color="#cf9220" backgroundColor="white" p="10px" borderRadius="50%" width={{base:"40px" , md:"50px"}} height={{base:"40px" , md:"50px"}} onClick={() => handleAddToCart(product)}>
+                    <FaCartShopping fontSize="24px" />
+                  </Button>
+
+                </Box>
 
               </Box>
-              <Box display="flex" alignItems={"center"} gap={4} justifyContent="center" mt="10px">
-                <Text color="white" fontWeight="semibold">{product.categoria}</Text>
-                <Button  color="#cf9220" backgroundColor="white" p="10px" borderRadius="50%" width="50px" height="50px" onClick={() => handleAddToCart(product)}>
-                  <FaCartShopping fontSize="24px" />
-                </Button>
-
-              </Box>
-
-             </Box>
-          </GridItem>
-        ))}
-      </Grid>
+            </GridItem>
+          ))}
+          </MotionGrid>
+        </AnimatePresence>
+      
+      </Box>
+      
       <Box display="flex" justifyContent="center" marginTop="20px">
         {productsToShow < products.length && (
           <Button onClick={handleShowMore} marginRight="10px">

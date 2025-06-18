@@ -3,7 +3,7 @@ import React from 'react'
 
  const Parrafo1 = () => {
    return (
-     <Text fontSize={{ base: "16px", lg: "20px" }} color="#2d5356" width={{ base: "100%", lg: "70%" }}>
+     <Text fontSize={{ base: "16px", lg: "20px" }} color="white" width={{ base: "100%", lg: "70%" }}>
        En nuestra empresa, nos dedicamos a ofrecer productos de alta calidad y un servicio al cliente excepcional. Nuestro compromiso es garantizar la satisfacción de nuestros clientes a través de una atención personalizada y soluciones adaptadas a sus necesidades.
      </Text>
    )

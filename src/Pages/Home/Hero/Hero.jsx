@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Box, Image, Text, Button, Flex, Stack, Heading } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
 const images = [
   { src: "/img/banner.jpeg", label: "Bed Room", items: "1200+ item" },
@@ -18,7 +19,7 @@ export const Hero = () => {
   const handlePrev = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <Flex direction="column" align="center" justify="center" w="full" h="100vh" bg="teal.900" color="white" p={10}>
+    <Flex direction="column" align="center" justify="center" w="full" h={{base: "992px" , md:"100vh"}} bg="teal.900" color="white" p={10}>
       {/* Texto principal */}
       <Stack spacing={4} textAlign="center" mb={10}>
         <Text fontSize="sm" bg="gray.700" px={3} py={1} rounded="full">Diseños sofisticados</Text>
@@ -27,8 +28,12 @@ export const Hero = () => {
           Elige los muebles adecuados para tu hogar, añadirá elegancia y funcionalidad a tu interior.
         </Text>
         <Flex gap={4} justify="center">
-          <Button colorScheme="yellow">Comprar</Button>
-          <Button variant="link" color="whiteAlpha.900">Sobre nosotros</Button>
+          <Button colorScheme="yellow">
+            <Link to="/Products">Comprar</Link>
+          </Button>
+          <Button variant="link" color="whiteAlpha.900">
+            <Link to="/About">Sobre Nosotros</Link>
+          </Button>
         </Flex>
       </Stack>
 
