@@ -51,7 +51,7 @@ export const FeaturedProducts = () => {
                           alignItems="center"
                           textAlign="center"
                           >
-                            <Img src={product.img} alt={product.nombre} w="250px" h="300px" p="16px" objectFit="cover"  borderRadius="12px"/>
+                            <Img src={product.img} alt={product.nombre} w="250px" h="300px" p="16px" objectFit="contain"  borderRadius="12px"/>
                             <Box backgroundColor="#2d5356" p="20px" borderRadius="18px" display="flex" alignItems="center" justifyContent="space-between" width="100%" height="90px" mt="10px">
                               <Box display="flex" flexDirection="column" alignItems="flex-start" lineHeight={2.0} justifyContent="center">
                                 <Heading as="h3" color="white" fontWeight="500" fontSize="16px"> {product.nombre} </Heading>

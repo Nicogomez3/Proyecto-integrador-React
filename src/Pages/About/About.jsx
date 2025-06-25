@@ -13,7 +13,7 @@ export const About = () => {
   return (
     <div>
       <Container
-      bgImage="/img/about.jpg"
+      bgImage="/img/about.avif"
       bgSize="cover"
       maxWidth="none"
       height="100vh"

@@ -5,9 +5,9 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 
 const images = [
-  { src: "/img/banner.jpeg", label: "Bed Room", items: "1200+ item" },
-  { src: "/img/banner2.jpeg", label: "Living Room", items: "900+ item" },
-  { src: "/img/banner3.jpg", label: "Waiting Room", items: "500+ item" }
+  { src: "/img/banner.avif", label: "Bed Room", items: "1200+ item" },
+  { src: "/img/banner2.avif", label: "Living Room", items: "900+ item" },
+  { src: "/img/banner3.avif", label: "Waiting Room", items: "500+ item" }
 ];
 
 const MotionBox = motion(Box);

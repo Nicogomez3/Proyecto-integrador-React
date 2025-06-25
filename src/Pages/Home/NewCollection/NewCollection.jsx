@@ -1,5 +1,6 @@
 import { Box, Grid, Image, Text, Heading, Button, Link, VStack } from "@chakra-ui/react";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { Link as RouterLink } from "react-router-dom";
 
 import React from 'react'
 import './StylesCollection.css'
@@ -36,12 +37,15 @@ return (
             <Text>Mesa redonda</Text>
             <Text>Mesa de madera</Text>
             <Text>Mesa de madera</Text>
-            <Link mt="2" display="flex" alignItems="center" color="teal.600" fontWeight="semibold">
-              Ver todo <IoIosArrowRoundForward />
-            </Link>
+
+            <RouterLink to="/Products"  >
+              <Box mt="2" display="flex" alignItems="center" color="teal.600" fontWeight="semibold">
+                Ver todo <IoIosArrowRoundForward />
+              </Box>
+            </RouterLink>
           </Box>
           <Box>
-            <Image src="/img/mesaRedonda.jpg" display={{ base: "none" , md:"block"}} alt="Table" mt="20px" borderRadius="lg" w="500px" h="350px"  />
+            <Image src="/img/mesaRedonda.avif" display={{ base: "none" , md:"block"}} alt="Table" mt="20px" borderRadius="lg" w="500px" h="350px"  />
           </Box>
         </Box>
 
@@ -65,11 +69,13 @@ return (
             <Text>Sillón orejero</Text>
             <Text>Silla de café</Text>
             <Text>Silla con ruedas</Text>
-            <Link mt="2" display="flex" alignItems="center" color="teal.600" fontWeight="semibold">
-              Ver todo <IoIosArrowRoundForward />
-            </Link>
+            <RouterLink to="/Products"  >
+              <Box mt="2" display="flex" alignItems="center" color="teal.600" fontWeight="semibold">
+                Ver todo <IoIosArrowRoundForward />
+              </Box>
+            </RouterLink>
           </Box>
-          <Image src="/img/antiguo.png" display={{ base: "none" , md:"block"}} alt="Chair" mt="20px" borderRadius="lg" w="300px" h="400px" />
+          <Image src="/img/antiguo.avif" display={{ base: "none" , md:"block"}} alt="Chair" mt="20px" borderRadius="lg" w="300px" h="400px" />
         </Box>
 
         {/* Caja 3 - Lighting Lamp */}
@@ -92,11 +98,13 @@ return (
             <Text>Lamparas Tripode</Text>
             <Text>Lamparas de Mesa</Text>
             <Text>Lamparas para estudio</Text>
-            <Link mt="2" display="flex" alignItems="center" color="teal.600" fontWeight="semibold">
-              Ver Todo <IoIosArrowRoundForward />
-            </Link>
+            <RouterLink to="/Products"  >
+              <Box mt="2" display="flex" alignItems="center" color="teal.600" fontWeight="semibold">
+                Ver todo <IoIosArrowRoundForward />
+              </Box>
+            </RouterLink>
           </Box>
-          <Image src="/img/product6.jpeg" alt="Lamp" mt="90px" h="150px" display={{ base: "none" , md:"block"}} borderRadius="lg" w="250px" objectFit="contain" />
+          <Image src="/img/product6.avif" alt="Lamp" mt="90px" h="150px" display={{ base: "none" , md:"block"}} borderRadius="lg" w="250px" objectFit="contain" />
         </Box>
 
         {/* Caja 4 - Get Discount */}

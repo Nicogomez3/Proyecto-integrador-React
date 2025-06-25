@@ -9,7 +9,7 @@ const Support = () => {
   return (
     <>
         <Container display="flex" flexDirection={{base:"column", xl:"row"}} margin="0px"  alignItems="center" justifyContent="space-evenly" p="60px" maxWidth="100%" marginInlineStart="20px" marginInlineEnd="20px" width="100%" >
-            <Img borderRadius="20px" width="800px" objectFit="cover" height="400px" src="/img/support.jpg" />
+            <Img borderRadius="20px" width="800px" objectFit="cover" height="400px" src="/img/support.avif" />
             <Box as="div" bg="#fff8dc" boxShadow="2xl" borderRadius="20px" p="30px" display="flex" flexDirection="column" alignItems="flex-start">
                 <Heading display="flex" gap="4" alignItems="center" as="h2">Soporte 24/7
                     {/* <MdContactSupport /> */}

@@ -11,8 +11,8 @@ export const ChooseUs = () => {
       mx="auto"
         marginTop="50px" marginBottom="50px">
         <Box>
-          <Heading as="h2" fontSize={{base:'2xl', md:"32px", lg:"36px" }} color="#2d5356" width={{base:"100%", lg:"400px    "}}>Por qué elegirnos</Heading>
-          <Text fontWeight="semi-bold" color="#2d5356" width={{base:'100%', lg:'70%'}} fontSize={{ base:"16px" , lg:"2xl" }}>Comprometidos con la calidad y el servicio al cliente</Text>
+          <Heading as="h2" fontSize={{base:'2xl', md:"32px", lg:"36px" }} color="black" width={{base:"100%", lg:"400px    "}}>Por qué elegirnos</Heading>
+          <Text fontWeight="semi-bold" color="blackAlpha.700" width={{base:'100%', lg:'70%'}} fontSize={{ base:"16px" , lg:"2xl" }}>Comprometidos con la calidad y el servicio al cliente</Text>
           
           <Link to="/About">
             <Button  bgColor="#2d5356" borderRadius="40px" width={{base:"150px" , lg:"200px"}} height="50px" fontSize="lg" color="white" marginTop="20px"> 
@@ -21,7 +21,7 @@ export const ChooseUs = () => {
           </Link>
         </Box>
         <Box>
-          <Img src="/img/support.jpg" objectFit="cover" alt="Choose Us" width={{base:"100%", lg:"600px"}} height="400px" borderRadius="18px" />
+          <Img src="/img/support.avif" objectFit="cover" alt="Choose Us" width={{base:"100%", lg:"600px"}} height="400px" borderRadius="18px" />
         </Box>
       </Box>
     </>
