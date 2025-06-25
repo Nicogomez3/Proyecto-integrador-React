@@ -6,7 +6,7 @@ export const Discover = () => {
   return (
     <>
         <Box display="flex" justifyContent="center" alignItems="center" flexDirection={{base:'column', md:'column', lg:'row'}} gap="40px" marginLeft={{base:"25px" , lg:"70px"}} marginRight={{base:"25px" , lg:"70px"}} marginTop="50px" marginBottom="50px" >
-            <Box display="flex" flexDirection="column" justifyContent="center" alignItems="flex-start" borderRadius="18px"  h="500px"  p={{ base:"30px" ,lg:"60px"}}  bgImage="linear-gradient(rgba(76, 76, 76, 0.287), rgba(76, 76, 76, 0.287)), url('/img/about.jpg')" 
+            <Box display="flex" flexDirection="column" justifyContent="center" alignItems="flex-start" borderRadius="18px"  h="500px"  p={{ base:"30px" ,lg:"60px"}}  bgImage="linear-gradient(rgba(76, 76, 76, 0.287), rgba(76, 76, 76, 0.287)), url('/img/about.avif')" 
             bgBlendMode="overlay"
             bgSize="cover"
             bgPosition="center"

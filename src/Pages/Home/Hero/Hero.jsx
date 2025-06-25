@@ -22,7 +22,7 @@ export const Hero = () => {
     <Flex direction="column" align="center" justify="center" w="full" h={{base: "992px" , md:"100vh"}} bg="teal.900" color="white" p={10}>
       {/* Texto principal */}
       <Stack spacing={4} textAlign="center" mb={10}>
-        <Text fontSize="sm" bg="gray.700" px={3} py={1} rounded="full">Diseños sofisticados</Text>
+        <Text fontSize="sm" bg="gray.700" mt={{base:"40px" , md:"10px"}} px={3} py={1} rounded="full">Diseños sofisticados</Text>
         <Heading fontSize="5xl">Modernos diseños de interiores</Heading>
         <Text fontSize="lg" opacity={0.8}>
           Elige los muebles adecuados para tu hogar, añadirá elegancia y funcionalidad a tu interior.

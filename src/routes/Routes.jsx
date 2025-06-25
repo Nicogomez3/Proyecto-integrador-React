@@ -11,7 +11,7 @@ import Login from '../Pages/Login/Login'
 import ProtectedRoute from '../Components/ProtectedRoute/ProtectedRoute'
 import Order from '../Pages/Order/Order'
 import Congratulations from '../Pages/Congratulations/Congratulations'
-
+import NotFound from '../Pages/404notFound/notFound'
 
 function Routes()  {
   return (
@@ -33,7 +33,7 @@ function Routes()  {
                 } />
                
                 {/* 404 not found */}
-                {/* <Route path="*" element={<NoEncontrado />} /> */}
+                <Route path="*" element={<NotFound />} />
                 {/* Register */}
                 <Route path="/register" element={<Register />} /> 
                 {/* Login */}

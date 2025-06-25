@@ -42,7 +42,7 @@ export const FeaturedProducts = () => {
                           key={product.id}
                           boxShadow="-1px -1px 12px 2px rgba(0,0,0,0.34);   "
                           borderRadius="20px"
-                          w={{base:"280px", md:"325px", lg:"325px", xl:"400px"}}
+                          w={{base:"250px", md:"325px", lg:"325px", xl:"400px"}}
                           h="420px"
                           
                           display="flex"

@@ -75,7 +75,7 @@ return (
               </Box>
             </RouterLink>
           </Box>
-          <Image src="/img/antiguo.avif" display={{ base: "none" , md:"block"}} alt="Chair" mt="20px" borderRadius="lg" w="300px" h="400px" />
+          <Image src="/img/antiguo.avif" display={{ base: "none" , md:"block"}} alt="Chair" mt="20px" borderRadius="lg" w="290px" h="400px" />
         </Box>
 
         {/* Caja 3 - Lighting Lamp */}

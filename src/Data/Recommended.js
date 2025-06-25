@@ -1,6 +1,6 @@
 export const Recommended = [
     // Categoría: Muebles
-    {
+     {
       id: 1,
       nombre: "Silla de madera",
       categoria: "Muebles",
@@ -8,7 +8,7 @@ export const Recommended = [
       descripcion: "Silla de madera resistente con acabado barnizado",
       disponible: true,
       stock: 10,
-      img: "/img/product1.jpeg"
+      img: "/img/product1.avif"
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ export const Recommended = [
       descripcion: "Sillón cómodo con función reclinable y tapizado de cuero",
       disponible: true,
       stock: 5,
-      img: "/img/product2.jpg"
+      img: "/img/product2.avif"
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ export const Recommended = [
       descripcion: "Mesa de luz con diseño minimalista y cajones",
       disponible: true,
       stock: 20,
-      img: "/img/product3.jpg"
+      img: "/img/product3.avif"
     },
     {
       id: 4,
@@ -38,7 +38,7 @@ export const Recommended = [
       descripcion: "Silla ajustable con soporte lumbar y reposabrazos",
       disponible: true,
       stock: 8,
-      img: "/img/product4.jpeg"
+      img: "/img/product4.avif"
     },
     {
       id: 5,
@@ -48,7 +48,7 @@ export const Recommended = [
       descripcion: "Mesa de comedor extensible para hasta 10 personas",
       disponible: true,
       stock: 4,
-      img: "/img/product5.jpg"
+      img: "/img/product5.avif"
     },
   
     // Categoría: Iluminación
@@ -60,7 +60,7 @@ export const Recommended = [
       descripcion: "Lámpara de pie ajustable con pantalla de tela",
       disponible: true,
       stock: 15,
-      img: "/img/product6.jpeg"
+      img: "/img/product6.avif"
     },
     {
       id: 7,
@@ -70,7 +70,7 @@ export const Recommended = [
       descripcion: "Lámpara de mesa con base de metal y pantalla de vidrio",
       disponible: false,
       stock: 0,
-      img: "/img/product7.jpg"
+      img: "/img/product7.avif"
     },
     {
       id: 8,
@@ -80,7 +80,7 @@ export const Recommended = [
       descripcion: "Araña de techo con diseño contemporáneo de acero inoxidable",
       disponible: true,
       stock: 2,
-      img: "/img/product8.jpg"
+      img: "/img/product8.avif"
     },
     {
       id: 9,
@@ -90,7 +90,7 @@ export const Recommended = [
       descripcion: "Lámpara de escritorio con luz LED ajustable y puerto USB",
       disponible: true,
       stock: 30,
-      img: "/img/product9.jpg"
+      img: "/img/product9.avif"
     },
     {
       id: 10,
@@ -100,7 +100,7 @@ export const Recommended = [
       descripcion: "Foco inteligente con control por app y múltiples colores",
       disponible: true,
       stock: 50,
-      img: "/img/product10.jpg"
+      img: "/img/product10.avif"
     },
   
     // Categoría: Decoración
@@ -112,7 +112,7 @@ export const Recommended = [
       descripcion: "Cuadro abstracto de gran tamaño enmarcado",
       disponible: true,
       stock: 7,
-      img: "/img/product11.jpg"
+      img: "/img/product11.avif"
     },
     {
       id: 12,
@@ -122,7 +122,7 @@ export const Recommended = [
       descripcion: "Espejo decorativo redondo con marco dorado",
       disponible: true,
       stock: 5,
-      img: "/img/product12.jpg"
+      img: "/img/product12.avif"
     },
     {
       id: 13,
@@ -132,7 +132,7 @@ export const Recommended = [
       descripcion: "Alfombra persa tejida a mano, tamaño 2x3 metros",
       disponible: true,
       stock: 3,
-      img: "/img/product13.jpg"
+      img: "/img/product13.avif"
     },
     {
       id: 14,
@@ -142,7 +142,7 @@ export const Recommended = [
       descripcion: "Florero alto de vidrio transparente",
       disponible: true,
       stock: 25,
-      img: "/img/product14.jpeg"
+      img: "/img/product14.avif"
     },
     {
       id: 15,
@@ -152,7 +152,7 @@ export const Recommended = [
       descripcion: "Cojín decorativo de algodón con diseño geométrico",
       disponible: true,
       stock: 50,
-      img: "/img/product15.jpg"
+      img: "/img/product15.avif"
     },
   
     // Categoría: Electrodomésticos
@@ -164,7 +164,7 @@ export const Recommended = [
       descripcion: "Aspiradora robot con navegación inteligente y control remoto",
       disponible: true,
       stock: 10,
-      img: "/img/product16.jpg"
+      img: "/img/product16.avif"
     },
     {
       id: 17,
@@ -174,7 +174,7 @@ export const Recommended = [
       descripcion: "Microondas de 30L con grill integrado",
       disponible: true,
       stock: 12,
-      img: "/img/product17.jpg"
+      img: "/img/product17.avif"
     },
     {
       id: 18,
@@ -184,7 +184,7 @@ export const Recommended = [
       descripcion: "Licuadora con motor de alta potencia y múltiples velocidades",
       disponible: true,
       stock: 20,
-      img: "/img/product18.jpg"
+      img: "/img/product18.avif"
     },
     {
       id: 19,
@@ -194,7 +194,7 @@ export const Recommended = [
       descripcion: "Cafetera express con molinillo integrado",
       disponible: true,
       stock: 8,
-      img: "/img/product19.jpg"
+      img: "/img/product19.avif"
     },
     {
       id: 20,
@@ -204,7 +204,7 @@ export const Recommended = [
       descripcion: "Aire acondicionado portátil con control remoto y función de calefacción",
       disponible: true,
       stock: 6,
-      img: "/img/product20.jpeg"
+      img: "/img/product20.avif"
     }
   ];
   
