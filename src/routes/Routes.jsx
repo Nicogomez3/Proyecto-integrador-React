@@ -11,7 +11,9 @@ import Login from '../Pages/Login/Login'
 import ProtectedRoute from '../Components/ProtectedRoute/ProtectedRoute'
 import Order from '../Pages/Order/Order'
 import Congratulations from '../Pages/Congratulations/Congratulations'
-import NotFound from '../Pages/404notFound/notFound'
+import NotFound from '../Pages/NotFound/NotFound'
+
+
 
 function Routes()  {
   return (
